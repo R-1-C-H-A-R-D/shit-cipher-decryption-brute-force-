@@ -12,9 +12,9 @@ void decrypt(char *ciphertext) {
         strcpy(temp, ciphertext);
 
         int j = 0;
-        while(ciphertext[j] != '\0') {
+        while(temp[j] != '\0') {
 
-            char ch = ciphertext[j];
+            char ch = temp[j];
 
             if(isupper(ch)) {
                 ch = (ch - 'A' - i + 26) % 26 + 'A';
@@ -24,7 +24,7 @@ void decrypt(char *ciphertext) {
                 ch = (ch - 'a' - i + 26) % 26 + 'a';
             }
 
-            ciphertext[j] = ch;
+            temp[j] = ch;
 
             j++;
         }
